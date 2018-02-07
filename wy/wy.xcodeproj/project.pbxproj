@@ -16,6 +16,9 @@
 		B29E99152027491C004C7568 /* WYHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29E99142027491C004C7568 /* WYHomeViewController.swift */; };
 		B29E991720274934004C7568 /* WYProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29E991620274934004C7568 /* WYProfileViewController.swift */; };
 		B29E991920274945004C7568 /* WYMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29E991820274945004C7568 /* WYMessageViewController.swift */; };
+		B2D0852B2029B1FF0008BE84 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D0852A2029B1FF0008BE84 /* Bundle+Extensions.swift */; };
+		B2D0852E202B0DF10008BE84 /* WYShoppingcartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D0852D202B0DF10008BE84 /* WYShoppingcartController.swift */; };
+		B2D08531202B0E5E0008BE84 /* WYMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D08530202B0E5E0008BE84 /* WYMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		B29E99142027491C004C7568 /* WYHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYHomeViewController.swift; sourceTree = "<group>"; };
 		B29E991620274934004C7568 /* WYProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYProfileViewController.swift; sourceTree = "<group>"; };
 		B29E991820274945004C7568 /* WYMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYMessageViewController.swift; sourceTree = "<group>"; };
+		B2D0852A2029B1FF0008BE84 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
+		B2D0852D202B0DF10008BE84 /* WYShoppingcartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYShoppingcartController.swift; sourceTree = "<group>"; };
+		B2D08530202B0E5E0008BE84 /* WYMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,8 @@
 		B29E990520274745004C7568 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B2D0852F202B0E280008BE84 /* Map */,
+				B2D0852C202B0D740008BE84 /* Shoppingcart  */,
 				B29E990620274751004C7568 /* Main */,
 				B29E99072027475B004C7568 /* Home */,
 				B29E99082027476E004C7568 /* Profile */,
@@ -144,8 +152,33 @@
 		B29E990D20274826004C7568 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				B2D085292029B19F0008BE84 /* Extensions */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		B2D085292029B19F0008BE84 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B2D0852A2029B1FF0008BE84 /* Bundle+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B2D0852C202B0D740008BE84 /* Shoppingcart  */ = {
+			isa = PBXGroup;
+			children = (
+				B2D0852D202B0DF10008BE84 /* WYShoppingcartController.swift */,
+			);
+			path = "Shoppingcart ";
+			sourceTree = "<group>";
+		};
+		B2D0852F202B0E280008BE84 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				B2D08530202B0E5E0008BE84 /* WYMapViewController.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2D0852E202B0DF10008BE84 /* WYShoppingcartController.swift in Sources */,
 				B29E9911202748C0004C7568 /* WYNavigationController.swift in Sources */,
 				B21CC3E62027135000ABC0A4 /* AppDelegate.swift in Sources */,
 				B29E991720274934004C7568 /* WYProfileViewController.swift in Sources */,
@@ -227,6 +261,8 @@
 				B29E990F20274897004C7568 /* WYMainViewController.swift in Sources */,
 				B29E9913202748DB004C7568 /* WYBaseViewController.swift in Sources */,
 				B29E99152027491C004C7568 /* WYHomeViewController.swift in Sources */,
+				B2D0852B2029B1FF0008BE84 /* Bundle+Extensions.swift in Sources */,
+				B2D08531202B0E5E0008BE84 /* WYMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
