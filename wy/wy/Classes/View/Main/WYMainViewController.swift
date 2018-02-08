@@ -16,9 +16,9 @@ class WYMainViewController: UITabBarController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override var supportedInterfaceOrientations:UIInterfaceOrientationMask{
+       
+        return .portrait
     }
     
     private func setupChildControllers(){
