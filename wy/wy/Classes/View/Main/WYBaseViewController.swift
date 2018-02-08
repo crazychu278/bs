@@ -23,7 +23,8 @@ class WYBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        setupTableView()
+        loadData()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -32,6 +33,10 @@ class WYBaseViewController: UIViewController {
         didSet{
             navItem.title = title
         }
+    }
+    
+    func loadData() {
+        
     }
     
     func setupUI(){
@@ -45,17 +50,32 @@ class WYBaseViewController: UIViewController {
         //设置navBar字体颜色
         navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.darkGray]
         
-        
+        setupTableView()
     }
     
     //设置表格视图
     private func setupTableView(){
         tableView = UITableView(frame: view.bounds,style:.plain)
+        //
         view.insertSubview(tableView!, belowSubview: navigationBar)
+        
+        //设置数据源 + 代理   子类实现数据源方法
+        tableView?.dataSource = self
+        tableView?.delegate = self
     }
-    
-    
-    
-
 }
 
+
+
+extension WYBaseViewController:UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    //父类准备方法 子类负责实现
+    //子类数据源不用写super
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+}

@@ -10,6 +10,8 @@ import UIKit
 
 class WYHomeViewController: WYBaseViewController {
 
+    private lazy var statusList = [String]()
+    private let cellId = "cellId"
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -26,9 +28,29 @@ class WYHomeViewController: WYBaseViewController {
         super.setupUI()
         //navigationItem.leftBarButtonItem = UIBarButtonItem(title: "11", style: UIBarButtonItemStyle.plain, target: self, action: #selector(showfrends))
         navItem.leftBarButtonItem = UIBarButtonItem(title: "菜单", fontSize: 16, target: self, action: #selector(showfrends))
+        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         
+    }
+    
+    override func loadData() {
+        for i in 0..<10 {
+            statusList.insert(i.description, at: 0)
+        }
     }
    
 
 }
 
+extension WYHomeViewController{
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return statusList.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        
+        cell.textLabel?.text = statusList[indexPath.row]
+        
+        return cell
+    }
+}
