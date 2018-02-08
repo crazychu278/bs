@@ -25,7 +25,7 @@ class WYHomeViewController: WYBaseViewController {
     override func setupUI() {
         super.setupUI()
         //navigationItem.leftBarButtonItem = UIBarButtonItem(title: "11", style: UIBarButtonItemStyle.plain, target: self, action: #selector(showfrends))
-        navItem.leftBarButtonItem = UIBarButtonItem(title: "11", fontSize: 16, target: self, action: #selector(showfrends))
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "菜单", fontSize: 16, target: self, action: #selector(showfrends))
         
     }
    

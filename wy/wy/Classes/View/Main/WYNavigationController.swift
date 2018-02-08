@@ -34,7 +34,7 @@ class WYNavigationController: UINavigationController {
     }
     
     @objc private func back(){
-    
+        popViewController(animated: true)
     }
 
 }

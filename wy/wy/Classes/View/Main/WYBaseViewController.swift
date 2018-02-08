@@ -10,7 +10,7 @@ import UIKit
 
 class WYBaseViewController: UIViewController {
     //UIScreen.main.bounds.size.width
-    lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 5, width: UIScreen.main.bounds.size.width, height: 65))
+    lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 20, width: UIScreen.main.bounds.size.width, height: 65))
     
     lazy var navItem = UINavigationItem()
     
