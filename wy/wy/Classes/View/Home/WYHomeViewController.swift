@@ -33,8 +33,14 @@ class WYHomeViewController: WYBaseViewController {
     }
     
     override func loadData() {
-        for i in 0..<15 {
-            statusList.insert(i.description, at: 0)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1){
+            for i in 0..<15 {
+                self.statusList.insert(i.description, at: 0)
+            }
+            
+            //结束刷新
+            self.refreshControl?.endRefreshing()
+            self.tableView?.reloadData()
         }
     }
    

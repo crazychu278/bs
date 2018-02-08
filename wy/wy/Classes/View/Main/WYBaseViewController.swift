@@ -14,6 +14,10 @@ class WYBaseViewController: UIViewController {
     var tableView:UITableView?
     
     
+    //刷新控件
+    var refreshControl:UIRefreshControl?
+    
+    
     
     
     lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 64))
@@ -35,7 +39,7 @@ class WYBaseViewController: UIViewController {
         }
     }
     
-    func loadData() {
+    @objc func loadData() {
         
     }
     
@@ -73,6 +77,19 @@ class WYBaseViewController: UIViewController {
         
         //设置内容缩进
         tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height, left: 0, bottom: tabBarController?.tabBar.bounds.height ?? 49, right: 0)
+        
+        
+        //刷新控件
+        //实例化
+        refreshControl = UIRefreshControl()
+        
+        //添加到tableView
+        tableView?.addSubview(refreshControl!)
+        
+        //添加监听方法
+        refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        
+        
     }
 }
 
