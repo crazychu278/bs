@@ -9,27 +9,36 @@
 import UIKit
 
 class WYBaseViewController: UIViewController {
-
+    //UIScreen.main.bounds.size.width
+    lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 5, width: UIScreen.main.bounds.size.width, height: 65))
+    
+    lazy var navItem = UINavigationItem()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    override var title: String?{
+        didSet{
+            navItem.title = title
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func setupUI(){
+        //添加导航条
+        view.addSubview(navigationBar)
+        navigationBar.items = [navItem]
+        //navigationBar.barTintColor = UIColor
+        
+        //设置navBar字体颜色
+        navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.darkGray]
     }
-    */
+    
+    
+    
 
 }
+

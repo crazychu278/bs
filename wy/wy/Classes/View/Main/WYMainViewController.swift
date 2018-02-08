@@ -20,10 +20,7 @@ class WYMainViewController: UITabBarController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-}
-// MARK: - 设置界面
-extension WYMainViewController{
+    
     private func setupChildControllers(){
         let array = [
             ["clsName":"WYHomeViewController","title":"首页","imageName":""],
@@ -31,7 +28,7 @@ extension WYMainViewController{
             ["clsName":"WYMessageViewController","title":"消息","imageName":""],
             ["clsName":"WYShoppingcartController","title":"购物车","imageName":""],
             ["clsName":"WYProfileViewController","title":"我的微印","imageName":""],
-        ]
+            ]
         var arrayM = [UIViewController]()
         
         for dict in array {
@@ -42,17 +39,27 @@ extension WYMainViewController{
     
     private func controller(dict:[String: String]) ->UIViewController {
         guard let clsName = dict["clsName"],
-              let title = dict["title"],
-              let imageName = dict["imageName"],
-              let cls = NSClassFromString(Bundle.main.namespace + "." + clsName ) as? UIViewController.Type
-        else {
-                    return UIViewController();
+            let title = dict["title"],
+            //let imageName = dict["imageName"],
+            let cls = NSClassFromString(Bundle.main.namespace + "." + clsName ) as? UIViewController.Type
+            else {
+                return UIViewController();
         }
-        
+        //创建视图
         let vc = cls.init()
         vc.title = title
+        
+        //设置图像
+        //vc.tabBarItem.image=UIImage(named:)
+        //vc.tabBarItem.selectedImage = UIView(named:)?.withRenderingMode(.alwaysOriginal)
+        
+        //设置tabbar标题大小
+        //vc.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12)],for:UIControlState(rawValue: 0))
+        
+        
         let nav = WYNavigationController(rootViewController: vc);
         return nav
     }
-    
+
 }
+

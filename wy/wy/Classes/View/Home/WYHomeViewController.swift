@@ -12,24 +12,23 @@ class WYHomeViewController: WYBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
+        
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @objc private func showfrends(){
+        let vc = WYDemoViewController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
     }
-    */
+    override func setupUI() {
+        super.setupUI()
+        //navigationItem.leftBarButtonItem = UIBarButtonItem(title: "11", style: UIBarButtonItemStyle.plain, target: self, action: #selector(showfrends))
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "11", fontSize: 16, target: self, action: #selector(showfrends))
+        
+    }
+   
 
 }
+
