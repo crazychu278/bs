@@ -33,7 +33,7 @@ class WYHomeViewController: WYBaseViewController {
     }
     
     override func loadData() {
-        for i in 0..<10 {
+        for i in 0..<15 {
             statusList.insert(i.description, at: 0)
         }
     }

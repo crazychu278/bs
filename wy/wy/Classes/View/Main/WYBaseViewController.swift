@@ -16,7 +16,7 @@ class WYBaseViewController: UIViewController {
     
     
     
-    lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 20, width: UIScreen.main.bounds.size.width, height: 65))
+    lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 64))
     
     lazy var navItem = UINavigationItem()
     
@@ -41,6 +41,16 @@ class WYBaseViewController: UIViewController {
     
     func setupUI(){
         //添加导航条
+        
+        automaticallyAdjustsScrollViewInsets = false
+    
+        
+        setupNavigationBar()
+        
+        setupTableView()
+    }
+    
+    private func setupNavigationBar(){
         view.addSubview(navigationBar)
         navigationBar.items = [navItem]
         
@@ -49,8 +59,6 @@ class WYBaseViewController: UIViewController {
         
         //设置navBar字体颜色
         navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.darkGray]
-        
-        setupTableView()
     }
     
     //设置表格视图
@@ -62,6 +70,9 @@ class WYBaseViewController: UIViewController {
         //设置数据源 + 代理   子类实现数据源方法
         tableView?.dataSource = self
         tableView?.delegate = self
+        
+        //设置内容缩进
+        tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height, left: 0, bottom: tabBarController?.tabBar.bounds.height ?? 49, right: 0)
     }
 }
 
