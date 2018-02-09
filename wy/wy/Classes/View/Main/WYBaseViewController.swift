@@ -17,7 +17,8 @@ class WYBaseViewController: UIViewController {
     //刷新控件
     var refreshControl:UIRefreshControl?
     
-    
+    //区分上拉刷新标记
+    var isPullup = false
     
     
     lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 64))
