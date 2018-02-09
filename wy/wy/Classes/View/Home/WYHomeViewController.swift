@@ -40,6 +40,7 @@ class WYHomeViewController: WYBaseViewController {
             
             //结束刷新
             self.refreshControl?.endRefreshing()
+            self.isPullup = false
             self.tableView?.reloadData()
         }
     }

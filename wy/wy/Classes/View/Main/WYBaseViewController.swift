@@ -40,7 +40,7 @@ class WYBaseViewController: UIViewController {
     }
     
     @objc func loadData() {
-        
+        refreshControl?.endRefreshing()
     }
     
     func setupUI(){
@@ -79,6 +79,10 @@ class WYBaseViewController: UIViewController {
         tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height, left: 0, bottom: tabBarController?.tabBar.bounds.height ?? 49, right: 0)
         
         
+        
+        
+        
+        //添加刷新控件
         //刷新控件
         //实例化
         refreshControl = UIRefreshControl()
@@ -105,5 +109,29 @@ extension WYBaseViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
+    
+    
+    //在显示最后一行显示下拉刷新
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        //判断是不是最后一行
+        //row
+        let row = indexPath.row
+        
+        //section
+        let section = tableView.numberOfSections - 1
+        
+        if row < 0 || section < 0 {
+            return
+        }
+        
+        let count = tableView.numberOfRows(inSection: section)
+        
+        if row == (count - 1) && !isPullup {
+            isPullup = true
+            loadData()
+        }
+        
+    }
+    
     
 }
