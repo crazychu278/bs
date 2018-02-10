@@ -13,6 +13,9 @@ class WYBaseViewController: UIViewController {
     //是否登陆
     var isUserLogin = false
     
+    //访客视图信息字典
+    var visitorInfoDic:[String: String]?
+    
     //表格视图
     var tableView:UITableView?
     
@@ -100,6 +103,9 @@ class WYBaseViewController: UIViewController {
     private func setuoVisitorView(){
         let visitorView = WYVistorView(frame: view.bounds)
         view.insertSubview(visitorView, belowSubview: navigationBar)
+        
+        visitorView.visitorInfo = visitorInfoDic;
+        
     }
     
 }

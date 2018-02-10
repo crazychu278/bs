@@ -9,6 +9,34 @@
 import UIKit
 
 class WYVistorView: UIView {
+    
+    var visitorInfo: [String: String]?{
+        didSet{
+            // 使用字典设置访问视图信息 [imageName / message]
+            // 取字典信息
+            guard let imageName = visitorInfo?["imageName"],
+                  let message = visitorInfo?["message"] else {
+                    return
+            }
+            
+            //设置消息
+            tipLabel.text = message
+            
+            
+            //设置图像
+            if imageName == "" {
+                return
+            }
+            
+            
+            //其他视图不显示小房子 和  遮罩视图
+            iconView.image = UIImage(named: imageName)
+            houseView.isHidden = true
+            maskIconView.isHidden = true
+        }
+    }
+    
+    // MARK: - 构造属性
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -19,6 +47,10 @@ class WYVistorView: UIView {
         fatalError("init error")
     }
 
+    //MARK:  - 设置访客视图信息
+
+    
+    
     // MARK: - 私有空间
     // 图像视图
     private lazy var iconView:UIImageView = UIImageView(image:UIImage(named:"visitordiscover_feed_image_smallicon"))
@@ -44,8 +76,6 @@ class WYVistorView: UIView {
 extension WYVistorView{
     func setupUI() {
         backgroundColor = UIColor.cz_color(withHex: 0xEDEDED)
-        
-        
         
         
         //添加
