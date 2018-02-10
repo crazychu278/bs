@@ -10,9 +10,11 @@ import UIKit
 
 class WYBaseViewController: UIViewController {
     
+    //是否登陆
+    var isUserLogin = false
+    
     //表格视图
     var tableView:UITableView?
-    
     
     //刷新控件
     var refreshControl:UIRefreshControl?
@@ -49,10 +51,9 @@ class WYBaseViewController: UIViewController {
         
         automaticallyAdjustsScrollViewInsets = false
     
-        
         setupNavigationBar()
         
-        setupTableView()
+        isUserLogin ? setupTableView() : setuoVisitorView()
     }
     
     private func setupNavigationBar(){
@@ -69,6 +70,7 @@ class WYBaseViewController: UIViewController {
     //设置表格视图
     private func setupTableView(){
         tableView = UITableView(frame: view.bounds,style:.plain)
+        
         //
         view.insertSubview(tableView!, belowSubview: navigationBar)
         
@@ -78,10 +80,6 @@ class WYBaseViewController: UIViewController {
         
         //设置内容缩进
         tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height, left: 0, bottom: tabBarController?.tabBar.bounds.height ?? 49, right: 0)
-        
-        
-        
-        
         
         //添加刷新控件
         //刷新控件
@@ -96,6 +94,14 @@ class WYBaseViewController: UIViewController {
         
         
     }
+    
+    
+    //设置访客视图
+    private func setuoVisitorView(){
+        let visitorView = UIView(frame: view.bounds)
+        view.insertSubview(visitorView, belowSubview: navigationBar)
+    }
+    
 }
 
 
