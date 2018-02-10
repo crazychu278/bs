@@ -23,11 +23,14 @@ class WYVistorView: UIView {
     // 图像视图
     private lazy var iconView:UIImageView = UIImageView(image:UIImage(named:"visitordiscover_feed_image_smallicon"))
     
+    // 遮罩图像
+    private lazy var maskIconView: UIImageView = UIImageView(image: UIImage(named:"visitordiscover_feed_mask_smallicon"))
+    
     // 小房子
     private lazy var houseView:UIImageView = UIImageView(image:UIImage(named:"visitordiscover_feed_image_house"))
     
-    //提示标签
-    private lazy var tipLabel:UILabel = UILabel.cz_label(withText: "      登陆之后可以查看更多内容", fontSize: 16, color: UIColor.darkGray)
+    // 提示标签
+    private lazy var tipLabel:UILabel = UILabel.cz_label(withText: "登陆之后可以查看更多内容", fontSize: 16, color: UIColor.darkGray)
     
     // 注册按钮
     private lazy var registerButton: UIButton = UIButton.cz_textButton("注册", fontSize: 16, normalColor: UIColor.orange, highlightedColor: UIColor.black, backgroundImageName: "common_button_white_disable")
@@ -40,14 +43,20 @@ class WYVistorView: UIView {
 
 extension WYVistorView{
     func setupUI() {
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.cz_color(withHex: 0xEDEDED)
+        
+        
+        
         
         //添加
         addSubview(iconView)
+        addSubview(maskIconView)
         addSubview(houseView)
         addSubview(tipLabel)
         addSubview(registerButton)
         addSubview(loginButton)
+        
+        tipLabel.textAlignment = .center
         
         //取消 autoresizing
         for v in subviews {
@@ -153,6 +162,22 @@ extension WYVistorView{
                                          attribute: .width,
                                          multiplier: 1.0,
                                          constant: 0 ))
+        
+        
+        //遮罩图像
+        //view VFL的控件名称和实际名称的关系
+        let viewDict:[String : Any] = ["maskIconView" : maskIconView,
+                                       "registerButton" : registerButton]
+        //metrics 常数映射关系
+        let metricsDict = ["spacing" : -20]
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[maskIconView]-0-|",
+                                                      options: [],
+                                                      metrics: nil,
+                                                      views: viewDict))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[maskIconView]-(spacing)-[registerButton]",
+                                                      options: [],
+                                                      metrics: metricsDict,
+                                                      views: viewDict))
         
     }
 }
