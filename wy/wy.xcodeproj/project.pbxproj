@@ -19,6 +19,7 @@
 		B20C58D0202C16FE00706B8B /* NSString+CZHash.m in Sources */ = {isa = PBXBuildFile; fileRef = B20C58BF202C16FD00706B8B /* NSString+CZHash.m */; };
 		B20C58D1202C16FE00706B8B /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = B20C58C4202C16FE00706B8B /* NSArray+Log.m */; };
 		B20C58D2202C16FE00706B8B /* NSString+CZPath.m in Sources */ = {isa = PBXBuildFile; fileRef = B20C58C5202C16FE00706B8B /* NSString+CZPath.m */; };
+		B20C58D6202E935D00706B8B /* WYVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20C58D5202E935D00706B8B /* WYVistorView.swift */; };
 		B21CC3E62027135000ABC0A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21CC3E52027135000ABC0A4 /* AppDelegate.swift */; };
 		B21CC3ED2027135000ABC0A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B21CC3EC2027135000ABC0A4 /* Assets.xcassets */; };
 		B21CC3F02027135000ABC0A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21CC3EE2027135000ABC0A4 /* LaunchScreen.storyboard */; };
@@ -62,6 +63,7 @@
 		B20C58C4202C16FE00706B8B /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
 		B20C58C5202C16FE00706B8B /* NSString+CZPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CZPath.m"; sourceTree = "<group>"; };
 		B20C58C6202C16FE00706B8B /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
+		B20C58D5202E935D00706B8B /* WYVistorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYVistorView.swift; sourceTree = "<group>"; };
 		B21CC3E22027135000ABC0A4 /* wy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21CC3E52027135000ABC0A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B21CC3EC2027135000ABC0A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,6 +125,15 @@
 			path = Additions;
 			sourceTree = "<group>";
 		};
+		B20C58D7202E936A00706B8B /* VisitorView */ = {
+			isa = PBXGroup;
+			children = (
+				B20C58D5202E935D00706B8B /* WYVistorView.swift */,
+			);
+			name = VisitorView;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		B21CC3D92027135000ABC0A4 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +179,7 @@
 		B29E990620274751004C7568 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B20C58D7202E936A00706B8B /* VisitorView */,
 				B2D08532202B275D0008BE84 /* demo */,
 				B29E990E20274897004C7568 /* WYMainViewController.swift */,
 				B29E9910202748C0004C7568 /* WYNavigationController.swift */,
@@ -357,6 +369,7 @@
 				B29E991720274934004C7568 /* WYProfileViewController.swift in Sources */,
 				B20C58CB202C16FE00706B8B /* UIScreen+CZAddition.m in Sources */,
 				B29E991920274945004C7568 /* WYMessageViewController.swift in Sources */,
+				B20C58D6202E935D00706B8B /* WYVistorView.swift in Sources */,
 				B29E990F20274897004C7568 /* WYMainViewController.swift in Sources */,
 				B20C58C9202C16FE00706B8B /* UIView+CZAddition.m in Sources */,
 				B29E9913202748DB004C7568 /* WYBaseViewController.swift in Sources */,

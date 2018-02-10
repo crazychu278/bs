@@ -98,7 +98,7 @@ class WYBaseViewController: UIViewController {
     
     //设置访客视图
     private func setuoVisitorView(){
-        let visitorView = UIView(frame: view.bounds)
+        let visitorView = WYVistorView(frame: view.bounds)
         view.insertSubview(visitorView, belowSubview: navigationBar)
     }
     
