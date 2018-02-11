@@ -25,6 +25,7 @@ class WYVistorView: UIView {
             
             //设置图像
             if imageName == "" {
+                startAnimation()
                 return
             }
             
@@ -47,8 +48,21 @@ class WYVistorView: UIView {
         fatalError("init error")
     }
 
-    //MARK:  - 设置访客视图信息
+    private func startAnimation(){
+        let animation = CABasicAnimation(keyPath: "transform.rotation")
+        //旋转一周
+        animation.toValue = 2 * Double.pi
+        //旋转次数
+        animation.repeatCount = MAXFLOAT
+        //旋转一周时间
+        animation.duration = 15
+        //完成之后不删除 iconView 删除后也会被销毁
+        animation.isRemovedOnCompletion = false
+        iconView.layer.add(animation, forKey: nil)
+    }
 
+    
+    
     
     
     // MARK: - 私有空间
