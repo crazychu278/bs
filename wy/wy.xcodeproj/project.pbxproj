@@ -170,10 +170,10 @@
 			children = (
 				B29E990620274751004C7568 /* Main */,
 				B29E99072027475B004C7568 /* Home */,
-				B29E99082027476E004C7568 /* Profile */,
-				B2D0852C202B0D740008BE84 /* Shoppingcart  */,
 				B2D0852F202B0E280008BE84 /* Map */,
 				B29E99092027479C004C7568 /* Message */,
+				B2D0852C202B0D740008BE84 /* Shoppingcart  */,
+				B29E99082027476E004C7568 /* Profile */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,8 +181,8 @@
 		B29E990620274751004C7568 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				B20C58D7202E936A00706B8B /* VisitorView */,
 				B2D08532202B275D0008BE84 /* demo */,
+				B20C58D7202E936A00706B8B /* VisitorView */,
 				B20C58D8203050EE00706B8B /* interface.json */,
 				B29E990E20274897004C7568 /* WYMainViewController.swift */,
 				B29E9910202748C0004C7568 /* WYNavigationController.swift */,

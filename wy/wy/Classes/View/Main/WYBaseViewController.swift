@@ -49,14 +49,14 @@ class WYBaseViewController: UIViewController {
         refreshControl?.endRefreshing()
     }
     
-    func setupUI(){
+    private func setupUI(){
         //添加导航条
         
         automaticallyAdjustsScrollViewInsets = false
     
         setupNavigationBar()
         
-        isUserLogin ? setupTableView() : setuoVisitorView()
+        isUserLogin ? setupTableView() : setupVisitorView()
     }
     
     private func setupNavigationBar(){
@@ -68,10 +68,13 @@ class WYBaseViewController: UIViewController {
         
         //设置navBar字体颜色
         navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.darkGray]
+        
+        //设置系统按钮的文字渲染颜色
+        navigationBar.tintColor = UIColor.orange
     }
     
     //设置表格视图
-    private func setupTableView(){
+    func setupTableView(){
         tableView = UITableView(frame: view.bounds,style:.plain)
         
         //
@@ -100,16 +103,33 @@ class WYBaseViewController: UIViewController {
     
     
     //设置访客视图
-    private func setuoVisitorView(){
+    private func setupVisitorView(){
         let visitorView = WYVistorView(frame: view.bounds)
         view.insertSubview(visitorView, belowSubview: navigationBar)
-        
         visitorView.visitorInfo = visitorInfoDic;
+        
+        visitorView.loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
+        visitorView.registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
+        
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(login))
+    
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "登陆", style: .plain, target: self, action: #selector(register))
+        
         
     }
     
 }
 
+
+extension WYBaseViewController{
+    @objc private func login(){
+        
+    }
+    @objc private func register(){
+        
+    }
+    
+}
 
 
 extension WYBaseViewController:UITableViewDelegate,UITableViewDataSource{
@@ -145,6 +165,6 @@ extension WYBaseViewController:UITableViewDelegate,UITableViewDataSource{
         }
         
     }
-    
-    
 }
+
+

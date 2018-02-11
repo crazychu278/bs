@@ -36,7 +36,7 @@ class WYMainViewController: UITabBarController {
         }
         
         //加载json
-        guard  let array = try? JSONSerialization.jsonObject(with: data as! Data, options: []) as? [[String:Any]] else{
+        guard  let array = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as? [[String:Any]] else{
                 return
         }
             

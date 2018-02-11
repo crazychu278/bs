@@ -9,7 +9,11 @@
 import UIKit
 
 class WYVistorView: UIView {
+    // 注册按钮
+    lazy var registerButton: UIButton = UIButton.cz_textButton("注册", fontSize: 16, normalColor: UIColor.orange, highlightedColor: UIColor.black, backgroundImageName: "common_button_white_disable")
     
+    // 登陆按钮
+    lazy var loginButton: UIButton = UIButton.cz_textButton("登陆", fontSize: 16, normalColor: UIColor.darkGray, highlightedColor: UIColor.black, backgroundImageName: "common_button_white_disable")
     var visitorInfo: [String: String]?{
         didSet{
             // 使用字典设置访问视图信息 [imageName / message]
@@ -78,11 +82,6 @@ class WYVistorView: UIView {
     // 提示标签
     private lazy var tipLabel:UILabel = UILabel.cz_label(withText: "登陆之后可以查看更多内容", fontSize: 16, color: UIColor.darkGray)
     
-    // 注册按钮
-    private lazy var registerButton: UIButton = UIButton.cz_textButton("注册", fontSize: 16, normalColor: UIColor.orange, highlightedColor: UIColor.black, backgroundImageName: "common_button_white_disable")
-    
-    // 登陆按钮
-    private lazy var loginButton: UIButton = UIButton.cz_textButton("登陆", fontSize: 16, normalColor: UIColor.darkGray, highlightedColor: UIColor.black, backgroundImageName: "common_button_white_disable")
     
 }
 

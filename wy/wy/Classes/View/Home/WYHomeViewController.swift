@@ -14,7 +14,7 @@ class WYHomeViewController: WYBaseViewController {
     private let cellId = "cellId"
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        
         
         // Do any additional setup after loading the view.
     }
@@ -24,8 +24,8 @@ class WYHomeViewController: WYBaseViewController {
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
-    override func setupUI() {
-        super.setupUI()
+    override func setupTableView() {
+        super.setupTableView()
         //navigationItem.leftBarButtonItem = UIBarButtonItem(title: "11", style: UIBarButtonItemStyle.plain, target: self, action: #selector(showfrends))
         navItem.leftBarButtonItem = UIBarButtonItem(title: "菜单", fontSize: 16, target: self, action: #selector(showfrends))
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
