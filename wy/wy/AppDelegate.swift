@@ -16,11 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
         window = UIWindow()
         window?.backgroundColor = UIColor.white
         window?.rootViewController = WYMainViewController()
         window?.makeKeyAndVisible();
-        
+        //loadAppinfo()
         
         return true
     }
@@ -48,5 +49,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+extension AppDelegate{
+    private func loadAppinfo(){
+        
+        DispatchQueue.global().async {
+            let url = Bundle.main.url(forResource: "interface.json", withExtension: nil)
+            
+            let data = NSData(contentsOf: url!)
+            
+            let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+            let jsonpath = (docDir as NSString).appendingPathComponent("interface.json")
+            data?.write(toFile: jsonpath, atomically: true)
+            print("123123\(jsonpath)")
+        }
+    }
 }
 

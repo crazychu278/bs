@@ -22,40 +22,35 @@ class WYMainViewController: UITabBarController {
     }
     
     private func setupChildControllers(){
-        let array:[[String:Any]] =
-        [
-            ["clsName":"WYHomeViewController",
-             "title":"首页",
-             "imageName":"",
-             "visitorInfo":["imageName":"","message":"登陆后查看所有店铺"]],
-            
-            ["clsName":"WYMapViewController",
-             "title":"地图",
-             "imageName":"",
-             "visitorInfo":["imageName":"","message":"登陆后会显示你附近的打印店"]],
-            
-            ["clsName":"WYMessageViewController",
-             "title":"消息",
-             "imageName":"",
-             "visitorInfo":["imageName":"visitordiscover_image_message","message":"登陆后会显示你最近的消息"]],
-            
-            ["clsName":"WYShoppingcartController",
-             "title":"购物车",
-             "imageName":"",
-             "visitorInfo":["imageName":"visitordiscover_feed_image_shoppingcart","message":"登陆后会显示你的购物车"]],
-            
-            ["clsName":"WYProfileViewController",
-             "title":"我的微印",
-             "imageName":"",
-             "visitorInfo":["imageName":"visitordiscover_image_profile","message":"登陆后会显示你的个人资料"]],
-        ]
+        //沙盒路径
+        let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let jsonpath = (docDir as NSString).appendingPathComponent("interface.json")
         
+        //加载data
+        var data = NSData(contentsOfFile: jsonpath)
+        
+        //
+        if data == nil {
+            let path =  Bundle.main.path(forResource: "interface.json", ofType: nil)
+            data = NSData(contentsOfFile: path!)
+        }
+        
+        //加载json
+        guard  let array = try? JSONSerialization.jsonObject(with: data as! Data, options: []) as? [[String:Any]] else{
+                return
+        }
+            
+
         //转换成 plist
         //(array as NSArray).write(to: "/Users/mac/Desctop/demo.plist", atomically: true)
         
+        //数组到json 序列化
+        //let data = try! JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
+        //(data as NSData).write(toFile: "/Users/chu/Desktop/interface.json", atomically: true)
+        
         var arrayM = [UIViewController]()
         
-        for dict in array {
+        for dict in array! {
             arrayM.append(controller(dict: dict as [String : AnyObject]))
         }
         viewControllers = arrayM

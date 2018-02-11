@@ -1,0 +1,47 @@
+[
+  {
+    "clsName" : "WYHomeViewController",
+    "title" : "首页",
+    "visitorInfo" : {
+      "imageName" : "",
+      "message" : "登陆后查看所有店铺"
+    },
+    "imageName" : ""
+  },
+  {
+    "clsName" : "WYMapViewController",
+    "title" : "地图",
+    "visitorInfo" : {
+      "imageName" : "",
+      "message" : "登陆后会显示你附近的打印店"
+    },
+    "imageName" : ""
+  },
+  {
+    "clsName" : "WYMessageViewController",
+    "title" : "消息",
+    "visitorInfo" : {
+      "imageName" : "visitordiscover_image_message",
+      "message" : "登陆后会显示你最近的消息"
+    },
+    "imageName" : ""
+  },
+  {
+    "clsName" : "WYShoppingcartController",
+    "title" : "购物车",
+    "visitorInfo" : {
+      "imageName" : "visitordiscover_feed_image_shoppingcart",
+      "message" : "登陆后会显示你的购物车"
+    },
+    "imageName" : ""
+  },
+  {
+    "clsName" : "WYProfileViewController",
+    "title" : "我的微印",
+    "visitorInfo" : {
+      "imageName" : "visitordiscover_image_profile",
+      "message" : "登陆后会显示你的个人资料"
+    },
+    "imageName" : ""
+  }
+]
