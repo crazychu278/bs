@@ -17,7 +17,32 @@ enum WYHTTPMethod {
 }
 
 class WYNetworkManager: AFHTTPSessionManager {
+    
     static let shared = WYNetworkManager()
+    
+    var accessToken: String? = "2.00BvvVDGNmwfQC8977bd9962SAfhKD"
+    
+    func tokenRequest(method: WYHTTPMethod = .GET, URLString: String, parameters: [String:AnyObject]?, completion: @escaping (_ json:Any?,  _ isSuccess:Bool)->()) {
+        
+        //处理
+        guard let token = accessToken else{
+            completion(nil,false)
+            return
+        }
+        
+        
+        var parameters = parameters
+        if parameters == nil{
+            parameters = [String: AnyObject]()
+        }
+        
+        parameters!["access_token"] = token as AnyObject
+        
+        //调用request
+        request(URLString: URLString, parameters: parameters!, completion: completion)
+        
+    }
+    
     
     func request(method: WYHTTPMethod = .GET, URLString: String, parameters: [String:AnyObject], completion: @escaping (_ json:Any?,  _ isSuccess:Bool)->()){
         
