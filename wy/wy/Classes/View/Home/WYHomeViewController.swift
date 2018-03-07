@@ -33,6 +33,12 @@ class WYHomeViewController: WYBaseViewController {
     }
     
     override func loadData() {
+        
+        //加载数据
+        WYNetworkManager.shared.statusList { (list,isSuccess) in
+            print(list)
+        }
+        
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1){
             for i in 0..<15 {
                 self.statusList.insert(i.description, at: 0)

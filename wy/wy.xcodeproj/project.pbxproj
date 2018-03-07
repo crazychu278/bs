@@ -22,9 +22,11 @@
 		B20C58D2202C16FE00706B8B /* NSString+CZPath.m in Sources */ = {isa = PBXBuildFile; fileRef = B20C58C5202C16FE00706B8B /* NSString+CZPath.m */; };
 		B20C58D6202E935D00706B8B /* WYVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20C58D5202E935D00706B8B /* WYVistorView.swift */; };
 		B20C58D9203050EE00706B8B /* interface.json in Resources */ = {isa = PBXBuildFile; fileRef = B20C58D8203050EE00706B8B /* interface.json */; };
+		B218D751204FED43004C8E24 /* WYNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B218D750204FED43004C8E24 /* WYNetworkManager+Extension.swift */; };
 		B21CC3E62027135000ABC0A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21CC3E52027135000ABC0A4 /* AppDelegate.swift */; };
 		B21CC3ED2027135000ABC0A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B21CC3EC2027135000ABC0A4 /* Assets.xcassets */; };
 		B21CC3F02027135000ABC0A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21CC3EE2027135000ABC0A4 /* LaunchScreen.storyboard */; };
+		B273CED0203E75E400E57333 /* WYNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B273CECF203E75E400E57333 /* WYNetworkManager.swift */; };
 		B29E990F20274897004C7568 /* WYMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29E990E20274897004C7568 /* WYMainViewController.swift */; };
 		B29E9911202748C0004C7568 /* WYNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29E9910202748C0004C7568 /* WYNavigationController.swift */; };
 		B29E9913202748DB004C7568 /* WYBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29E9912202748DB004C7568 /* WYBaseViewController.swift */; };
@@ -70,11 +72,13 @@
 		B20C58C6202C16FE00706B8B /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
 		B20C58D5202E935D00706B8B /* WYVistorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYVistorView.swift; sourceTree = "<group>"; };
 		B20C58D8203050EE00706B8B /* interface.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = interface.json; sourceTree = "<group>"; };
+		B218D750204FED43004C8E24 /* WYNetworkManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WYNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		B21CC3E22027135000ABC0A4 /* wy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21CC3E52027135000ABC0A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B21CC3EC2027135000ABC0A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B21CC3EF2027135000ABC0A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B21CC3F12027135000ABC0A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B273CECF203E75E400E57333 /* WYNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYNetworkManager.swift; sourceTree = "<group>"; };
 		B29E990E20274897004C7568 /* WYMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYMainViewController.swift; sourceTree = "<group>"; };
 		B29E9910202748C0004C7568 /* WYNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYNavigationController.swift; sourceTree = "<group>"; };
 		B29E9912202748DB004C7568 /* WYBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYBaseViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +185,15 @@
 			path = wy;
 			sourceTree = "<group>";
 		};
+		B273CECE203E759000E57333 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B218D750204FED43004C8E24 /* WYNetworkManager+Extension.swift */,
+				B273CECF203E75E400E57333 /* WYNetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		B29E990520274745004C7568 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +272,7 @@
 		B29E990D20274826004C7568 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				B273CECE203E759000E57333 /* Network */,
 				B20C58AC202C166D00706B8B /* Additions */,
 				B2D085292029B19F0008BE84 /* Extensions */,
 			);
@@ -451,6 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B20C58C8202C16FE00706B8B /* UIColor+CZAddition.m in Sources */,
+				B273CED0203E75E400E57333 /* WYNetworkManager.swift in Sources */,
 				B20C58D2202C16FE00706B8B /* NSString+CZPath.m in Sources */,
 				B20C58C7202C16FE00706B8B /* UIViewController+CZAddition.m in Sources */,
 				B20C58CE202C16FE00706B8B /* UIButton+CZAddition.m in Sources */,
@@ -465,6 +480,7 @@
 				B29E9911202748C0004C7568 /* WYNavigationController.swift in Sources */,
 				B21CC3E62027135000ABC0A4 /* AppDelegate.swift in Sources */,
 				B29E991720274934004C7568 /* WYProfileViewController.swift in Sources */,
+				B218D751204FED43004C8E24 /* WYNetworkManager+Extension.swift in Sources */,
 				B20C58CB202C16FE00706B8B /* UIScreen+CZAddition.m in Sources */,
 				B29E991920274945004C7568 /* WYMessageViewController.swift in Sources */,
 				B20C58D6202E935D00706B8B /* WYVistorView.swift in Sources */,
