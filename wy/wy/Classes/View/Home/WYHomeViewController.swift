@@ -10,8 +10,22 @@ import UIKit
 
 class WYHomeViewController: WYBaseViewController {
 
-    private lazy var statusList = [String]()
+    private lazy var listViewModel = WYStatusListViewModel()
+    
     private let cellId = "cellId"
+    
+    override func loadData() {
+        listViewModel.loadStatus(pullup: self.isPullup){ (isSuccess,hasPullup) in
+            print("加载结束")
+            //结束刷新
+            self.refreshControl?.endRefreshing()
+            self.isPullup = true
+            self.tableView?.reloadData()
+        }
+        
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,46 +38,40 @@ class WYHomeViewController: WYBaseViewController {
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    
     override func setupTableView() {
         super.setupTableView()
         //navigationItem.leftBarButtonItem = UIBarButtonItem(title: "11", style: UIBarButtonItemStyle.plain, target: self, action: #selector(showfrends))
         navItem.leftBarButtonItem = UIBarButtonItem(title: "菜单", fontSize: 16, target: self, action: #selector(showfrends))
-        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         
+        //tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView?.register(UINib(nibName: "WYstatusNormalCell", bundle: nil), forCellReuseIdentifier: cellId)
+    
+        //行高
+        
+        tableView?.rowHeight = UITableViewAutomaticDimension
+        tableView?.estimatedRowHeight = 300
+    
+        //取消分割线
+        tableView?.separatorStyle = .none
     }
     
-    override func loadData() {
-        
-        //加载数据
-        WYNetworkManager.shared.statusList { (list,isSuccess) in
-            print(list)
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1){
-            for i in 0..<15 {
-                self.statusList.insert(i.description, at: 0)
-            }
-            
-            //结束刷新
-            self.refreshControl?.endRefreshing()
-            self.isPullup = false
-            self.tableView?.reloadData()
-        }
-    }
    
 
 }
 
 extension WYHomeViewController{
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statusList.count
+        return listViewModel.statusList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        //取cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! WYStatusCell
         
-        cell.textLabel?.text = statusList[indexPath.row]
-        
+        cell.shopname.text = listViewModel.statusList[indexPath.row].name
+
         return cell
     }
 }

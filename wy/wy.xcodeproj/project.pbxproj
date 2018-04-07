@@ -26,6 +26,18 @@
 		B21CC3E62027135000ABC0A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21CC3E52027135000ABC0A4 /* AppDelegate.swift */; };
 		B21CC3ED2027135000ABC0A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B21CC3EC2027135000ABC0A4 /* Assets.xcassets */; };
 		B21CC3F02027135000ABC0A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21CC3EE2027135000ABC0A4 /* LaunchScreen.storyboard */; };
+		B21F53AB2077BF880059B390 /* WYShoppingCartNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B21F53AA2077BF880059B390 /* WYShoppingCartNormalCell.xib */; };
+		B21F53AF2077C9D60059B390 /* WYShoppingCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21F53AE2077C9D60059B390 /* WYShoppingCartCell.swift */; };
+		B21F53B12078AF3D0059B390 /* profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21F53B02078AF3D0059B390 /* profile.storyboard */; };
+		B22DE4902058290F00FD568A /* WYStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DE48F2058290F00FD568A /* WYStatus.swift */; };
+		B22DE4922058B93000FD568A /* WYStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DE4912058B93000FD568A /* WYStatusListViewModel.swift */; };
+		B2482B9E20736BA40008E677 /* WYCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2482B9D20736BA40008E677 /* WYCommon.swift */; };
+		B2482BA1207370670008E677 /* WYLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2482BA0207370670008E677 /* WYLoginViewController.swift */; };
+		B2482BA4207376430008E677 /* WYUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2482BA3207376430008E677 /* WYUserAccount.swift */; };
+		B2482BA620737E770008E677 /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2482BA520737E770008E677 /* login.storyboard */; };
+		B2482BE320745ED40008E677 /* WYStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2482BE220745ED40008E677 /* WYStatusCell.swift */; };
+		B2482BE520745EFD0008E677 /* WYstatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2482BE420745EFD0008E677 /* WYstatusNormalCell.xib */; };
+		B2482BE720746ABE0008E677 /* WYShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2482BE620746ABE0008E677 /* WYShop.swift */; };
 		B273CED0203E75E400E57333 /* WYNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B273CECF203E75E400E57333 /* WYNetworkManager.swift */; };
 		B29E990F20274897004C7568 /* WYMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29E990E20274897004C7568 /* WYMainViewController.swift */; };
 		B29E9911202748C0004C7568 /* WYNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29E9910202748C0004C7568 /* WYNavigationController.swift */; };
@@ -78,6 +90,18 @@
 		B21CC3EC2027135000ABC0A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B21CC3EF2027135000ABC0A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B21CC3F12027135000ABC0A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B21F53AA2077BF880059B390 /* WYShoppingCartNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WYShoppingCartNormalCell.xib; sourceTree = "<group>"; };
+		B21F53AE2077C9D60059B390 /* WYShoppingCartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYShoppingCartCell.swift; sourceTree = "<group>"; };
+		B21F53B02078AF3D0059B390 /* profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = profile.storyboard; sourceTree = "<group>"; };
+		B22DE48F2058290F00FD568A /* WYStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYStatus.swift; sourceTree = "<group>"; };
+		B22DE4912058B93000FD568A /* WYStatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYStatusListViewModel.swift; sourceTree = "<group>"; };
+		B2482B9D20736BA40008E677 /* WYCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYCommon.swift; sourceTree = "<group>"; };
+		B2482BA0207370670008E677 /* WYLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYLoginViewController.swift; sourceTree = "<group>"; };
+		B2482BA3207376430008E677 /* WYUserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYUserAccount.swift; sourceTree = "<group>"; };
+		B2482BA520737E770008E677 /* login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
+		B2482BE220745ED40008E677 /* WYStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYStatusCell.swift; sourceTree = "<group>"; };
+		B2482BE420745EFD0008E677 /* WYstatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WYstatusNormalCell.xib; sourceTree = "<group>"; };
+		B2482BE620746ABE0008E677 /* WYShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYShop.swift; sourceTree = "<group>"; };
 		B273CECF203E75E400E57333 /* WYNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYNetworkManager.swift; sourceTree = "<group>"; };
 		B29E990E20274897004C7568 /* WYMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYMainViewController.swift; sourceTree = "<group>"; };
 		B29E9910202748C0004C7568 /* WYNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYNavigationController.swift; sourceTree = "<group>"; };
@@ -185,11 +209,47 @@
 			path = wy;
 			sourceTree = "<group>";
 		};
+		B21F53A72077BF1C0059B390 /* ShopCell */ = {
+			isa = PBXGroup;
+			children = (
+				B21F53AA2077BF880059B390 /* WYShoppingCartNormalCell.xib */,
+				B21F53AE2077C9D60059B390 /* WYShoppingCartCell.swift */,
+			);
+			path = ShopCell;
+			sourceTree = "<group>";
+		};
+		B2482B9F207370290008E677 /* auth */ = {
+			isa = PBXGroup;
+			children = (
+				B2482BA0207370670008E677 /* WYLoginViewController.swift */,
+				B2482BA520737E770008E677 /* login.storyboard */,
+			);
+			path = auth;
+			sourceTree = "<group>";
+		};
+		B2482BA2207375FF0008E677 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B2482BA3207376430008E677 /* WYUserAccount.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B2482BE120745E580008E677 /* StatusCell */ = {
+			isa = PBXGroup;
+			children = (
+				B2482BE220745ED40008E677 /* WYStatusCell.swift */,
+				B2482BE420745EFD0008E677 /* WYstatusNormalCell.xib */,
+			);
+			path = StatusCell;
+			sourceTree = "<group>";
+		};
 		B273CECE203E759000E57333 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				B218D750204FED43004C8E24 /* WYNetworkManager+Extension.swift */,
+				B2482BA2207375FF0008E677 /* Model */,
 				B273CECF203E75E400E57333 /* WYNetworkManager.swift */,
+				B218D750204FED43004C8E24 /* WYNetworkManager+Extension.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -210,6 +270,7 @@
 		B29E990620274751004C7568 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B2482B9F207370290008E677 /* auth */,
 				B2D08532202B275D0008BE84 /* demo */,
 				B20C58D7202E936A00706B8B /* VisitorView */,
 				B20C58D8203050EE00706B8B /* interface.json */,
@@ -223,6 +284,7 @@
 		B29E99072027475B004C7568 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B2482BE120745E580008E677 /* StatusCell */,
 				B29E99142027491C004C7568 /* WYHomeViewController.swift */,
 			);
 			path = Home;
@@ -231,6 +293,7 @@
 		B29E99082027476E004C7568 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				B21F53B02078AF3D0059B390 /* profile.storyboard */,
 				B29E991620274934004C7568 /* WYProfileViewController.swift */,
 			);
 			path = Profile;
@@ -258,6 +321,7 @@
 		B29E990B202747E6004C7568 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B22DE4912058B93000FD568A /* WYStatusListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -265,6 +329,8 @@
 		B29E990C202747FD004C7568 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B22DE48F2058290F00FD568A /* WYStatus.swift */,
+				B2482BE620746ABE0008E677 /* WYShop.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -275,6 +341,7 @@
 				B273CECE203E759000E57333 /* Network */,
 				B20C58AC202C166D00706B8B /* Additions */,
 				B2D085292029B19F0008BE84 /* Extensions */,
+				B2482B9D20736BA40008E677 /* WYCommon.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -291,6 +358,7 @@
 		B2D0852C202B0D740008BE84 /* Shoppingcart  */ = {
 			isa = PBXGroup;
 			children = (
+				B21F53A72077BF1C0059B390 /* ShopCell */,
 				B2D0852D202B0DF10008BE84 /* WYShoppingcartController.swift */,
 			);
 			path = "Shoppingcart ";
@@ -384,8 +452,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B21F53B12078AF3D0059B390 /* profile.storyboard in Resources */,
+				B2482BA620737E770008E677 /* login.storyboard in Resources */,
+				B2482BE520745EFD0008E677 /* WYstatusNormalCell.xib in Resources */,
 				B20C58D9203050EE00706B8B /* interface.json in Resources */,
 				B21CC3F02027135000ABC0A4 /* LaunchScreen.storyboard in Resources */,
+				B21F53AB2077BF880059B390 /* WYShoppingCartNormalCell.xib in Resources */,
 				B21CC3ED2027135000ABC0A4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +536,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B22DE4922058B93000FD568A /* WYStatusListViewModel.swift in Sources */,
 				B20C58C8202C16FE00706B8B /* UIColor+CZAddition.m in Sources */,
 				B273CED0203E75E400E57333 /* WYNetworkManager.swift in Sources */,
 				B20C58D2202C16FE00706B8B /* NSString+CZPath.m in Sources */,
@@ -473,7 +546,11 @@
 				B2D08536202B30790008BE84 /* UIBarButtonItem+Extensions.swift in Sources */,
 				B20C58CA202C16FE00706B8B /* NSString+CZBase64.m in Sources */,
 				B20C58D1202C16FE00706B8B /* NSArray+Log.m in Sources */,
+				B2482BA4207376430008E677 /* WYUserAccount.swift in Sources */,
+				B2482BE720746ABE0008E677 /* WYShop.swift in Sources */,
+				B2482BE320745ED40008E677 /* WYStatusCell.swift in Sources */,
 				B20C58D0202C16FE00706B8B /* NSString+CZHash.m in Sources */,
+				B2482BA1207370670008E677 /* WYLoginViewController.swift in Sources */,
 				B20C58CD202C16FE00706B8B /* NSAttributedString+CZAdditon.m in Sources */,
 				B2D0852E202B0DF10008BE84 /* WYShoppingcartController.swift in Sources */,
 				B20C58CC202C16FE00706B8B /* NSObject+CZRuntime.m in Sources */,
@@ -487,10 +564,13 @@
 				B29E990F20274897004C7568 /* WYMainViewController.swift in Sources */,
 				B20C58C9202C16FE00706B8B /* UIView+CZAddition.m in Sources */,
 				B29E9913202748DB004C7568 /* WYBaseViewController.swift in Sources */,
+				B2482B9E20736BA40008E677 /* WYCommon.swift in Sources */,
 				B2D08534202B27B10008BE84 /* WYDemoViewController.swift in Sources */,
 				B29E99152027491C004C7568 /* WYHomeViewController.swift in Sources */,
+				B21F53AF2077C9D60059B390 /* WYShoppingCartCell.swift in Sources */,
 				B2D0852B2029B1FF0008BE84 /* Bundle+Extensions.swift in Sources */,
 				B2D08531202B0E5E0008BE84 /* WYMapViewController.swift in Sources */,
+				B22DE4902058290F00FD568A /* WYStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

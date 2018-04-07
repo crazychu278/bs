@@ -14,8 +14,30 @@ class WYMainViewController: UITabBarController {
         super.viewDidLoad()
         setupChildControllers()
         // Do any additional setup after loading the view.
+        
+        
+        delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: WYUserShouldLoginNotification), object: nil)
+        
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
+    
+    @objc private func userLogin(n:Notification){
+        print("用户登陆通知\(n)")
+        
+        let nav = UINavigationController(rootViewController: WYLoginViewController())
+        
+        
+        self.present(nav,animated: true,completion: nil)
+        
+        
+    }
+    
+    
     override var supportedInterfaceOrientations:UIInterfaceOrientationMask{
        
         return .portrait
@@ -82,5 +104,24 @@ class WYMainViewController: UITabBarController {
         return nav
     }
 
+}
+
+extension WYMainViewController:UITabBarControllerDelegate{
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+   
+        print("切换到\(viewController)")
+        let index = (childViewControllers as NSArray).index(of: viewController)
+        if selectedIndex == 0 && index == selectedIndex {
+            let nav = childViewControllers[0] as! UINavigationController
+            let vc = nav.childViewControllers[0] as! WYHomeViewController
+            
+            vc.tableView?.setContentOffset(CGPoint(x:0,y:-64), animated: true)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now()+1, execute: {
+                vc.loadData()
+            })
+        }
+        return !viewController.isMember(of: UIViewController.self)
+    }
 }
 

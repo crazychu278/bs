@@ -111,9 +111,9 @@ class WYBaseViewController: UIViewController {
         visitorView.loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
         visitorView.registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
         
-        navItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(login))
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(register))
     
-        navItem.rightBarButtonItem = UIBarButtonItem(title: "登陆", style: .plain, target: self, action: #selector(register))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "登陆", style: .plain, target: self, action: #selector(login))
         
         
     }
@@ -122,11 +122,20 @@ class WYBaseViewController: UIViewController {
 
 
 extension WYBaseViewController{
+    
     @objc private func login(){
+
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: WYUserShouldLoginNotification), object: nil)
+        
+        let sb = UIStoryboard(name: "login", bundle: nil)
+        
+        let newVC = sb.instantiateViewController(withIdentifier: "WYLoginViewController") as! UIViewController
+        
+        self.navigationController?.pushViewController(newVC, animated: true)
         
     }
     @objc private func register(){
-        
+        print("注册")
     }
     
 }

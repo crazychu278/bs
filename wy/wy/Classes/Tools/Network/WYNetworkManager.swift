@@ -20,38 +20,44 @@ class WYNetworkManager: AFHTTPSessionManager {
     
     static let shared = WYNetworkManager()
     
-    var accessToken: String? = "2.00BvvVDGNmwfQC8977bd9962SAfhKD"
+//    var accessToken: String? = "2.00BvvVDGNmwfQC8977bd9962SAfhKD"
+//
+//    func tokenRequest(method: WYHTTPMethod = .GET, URLString: String, parameters: [String:AnyObject]?, completion: @escaping (_ json:Any?,  _ isSuccess:Bool)->()) {
+//
+//        //处理
+//        guard let token = accessToken else{
+//            print("没有token 需要登录")
+//            completion(nil,false)
+//            return
+//        }
+//
+//
+//        var parameters = parameters
+//        if parameters == nil{
+//            parameters = [String: AnyObject]()
+//        }
+//
+//        parameters!["access_token"] = token as AnyObject
+//        
+//        //调用request
+//        request(URLString: URLString, parameters: parameters!, completion: completion)
+//
+//    }
     
-    func tokenRequest(method: WYHTTPMethod = .GET, URLString: String, parameters: [String:AnyObject]?, completion: @escaping (_ json:Any?,  _ isSuccess:Bool)->()) {
-        
-        //处理
-        guard let token = accessToken else{
-            completion(nil,false)
-            return
-        }
-        
-        
-        var parameters = parameters
-        if parameters == nil{
-            parameters = [String: AnyObject]()
-        }
-        
-        parameters!["access_token"] = token as AnyObject
-        
-        //调用request
-        request(URLString: URLString, parameters: parameters!, completion: completion)
-        
-    }
     
-    
-    func request(method: WYHTTPMethod = .GET, URLString: String, parameters: [String:AnyObject], completion: @escaping (_ json:Any?,  _ isSuccess:Bool)->()){
+    func request(method: WYHTTPMethod = .GET, URLString: String, parameters: [String:String]?, completion: @escaping (AnyObject?, Bool)->()){
         
-        let success = {(task:URLSessionDataTask,json:Any?) ->() in
-            completion(json,true)
+        let success = {(task:URLSessionDataTask,json:Any) ->() in
+            completion(json as AnyObject?,true)
         }
         
         let failure = {(task:URLSessionDataTask?,error:Error) ->() in
             print("bad network")
+            if (task?.response as? HTTPURLResponse)?.statusCode == 403{
+                print("Token 错误")
+            }
+            
+            
             completion(nil, false)
         }
         

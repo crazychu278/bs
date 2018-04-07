@@ -9,7 +9,7 @@
 import UIKit
 
 class WYShoppingcartController: WYBaseViewController {
-
+    private let cellId = "cellId"
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +21,28 @@ class WYShoppingcartController: WYBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    override func loadData() {
     }
-    */
-
+    
+    override func setupTableView() {
+    }
 }
+
+
+
+extension WYShoppingcartController{
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cellId.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //取cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! WYStatusCell
+        
+        //cell.text = tableView[indexPath.row]
+        
+        return cell
+    }
+}
+
