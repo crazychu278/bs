@@ -11,6 +11,9 @@ import Foundation
 class WYUserAccount: NSObject {
     
     @objc var uid: String?
+    
+    
+    
     @objc var name: String?
     @objc var avatar: String?
     

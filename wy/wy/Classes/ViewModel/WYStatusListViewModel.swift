@@ -35,26 +35,14 @@ class WYStatusListViewModel {
             completion(true,false)
             return
         }
-        
-       
-        
+
         WYNetworkManager.shared.statusList{ (list,isSuccess) in
             //字典转模型
-            
-            
-            
-            
-            
+
             guard let array = NSArray.yy_modelArray(with: WYStatus.self,  json: list ?? []) as? [WYStatus] else{
                 completion(isSuccess,false)
                 return
             }
-            
-            
-            
-            
-            
-            
             if pullup {
                 self.statusList = array
             }else{

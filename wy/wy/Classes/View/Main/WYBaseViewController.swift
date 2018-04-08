@@ -35,15 +35,29 @@ class WYBaseViewController: UIViewController {
         setupUI()
         loadData()
         
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(rawValue: "Name"), object: nil)
         // Do any additional setup after loading the view.
     }
     
-    
+    @objc func loginSuccess(){
+        isUserLogin = true
+        print("aaaa")
+        view = nil
+        
+        NotificationCenter.default.removeObserver(self)
+    }
     override var title: String?{
         didSet{
             navItem.title = title
         }
     }
+    
+    
+    func reload(){
+        view = nil
+    }
+    
     
     @objc func loadData() {
         refreshControl?.endRefreshing()
@@ -124,18 +138,15 @@ class WYBaseViewController: UIViewController {
 extension WYBaseViewController{
     
     @objc private func login(){
-
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: WYUserShouldLoginNotification), object: nil)
-        
-        let sb = UIStoryboard(name: "login", bundle: nil)
-        
-        let newVC = sb.instantiateViewController(withIdentifier: "WYLoginViewController") as! UIViewController
-        
-        self.navigationController?.pushViewController(newVC, animated: true)
+        let nav = UINavigationController(rootViewController: WYLoginViewController())
+        //界面跳转
+        self.present(nav, animated:true, completion:nil)
         
     }
     @objc private func register(){
-        print("注册")
+        let nav = UINavigationController(rootViewController: WYSignupViewController())
+        //界面跳转
+        self.present(nav, animated:true, completion:nil)
     }
     
 }
