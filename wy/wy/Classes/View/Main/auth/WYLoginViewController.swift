@@ -43,10 +43,9 @@ class WYLoginViewController: UIViewController {
 
     @objc private func checkIn(){
         let URLString = "http://www.yunprint.com/api/cse49910p/login/uid/" + usenameText.text!+"/pwd/" + passwordText.text!
-        WYNetworkManager.shared.request(URLString: URLString, parameters: nil){ (json, isSuccess) in
+        WYNetworkManager.shared.request(URLString: URLString, parameters: nil) { (json, isSuccess) in
             if (json!["error"] as?  Bool) == false{
-                self.userAccount = json!["user"] as! [String : AnyObject]
-                print(self.userAccount)
+               
                 let alertController = UIAlertController(title: "登录成功",
                                                         message: nil, preferredStyle: .alert)
                 //显示提示框
@@ -56,17 +55,22 @@ class WYLoginViewController: UIViewController {
                     self.presentedViewController?.dismiss(animated: false, completion: nil)
                 }
                 
-                WYBaseViewController.shared.isUserLogin = true
+                let urlstring = "http://www.yunprint.com/api/cse49910p/getuser/uid/" + self.usenameText.text!
+                
+                print(urlstring)
+                
+                WYNetworkManager.shared.setUserAccount(URLString: urlstring){ (result,isSuccess) in
+                    
+                }
                 
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "base"), object: nil)
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "map"), object: nil)
-                
-                
-                
+
                 
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
                     self.dismiss(animated: true, completion: nil)
                 }
+                
                 
             }else{
                 let alertController = UIAlertController(title: "密码错误",

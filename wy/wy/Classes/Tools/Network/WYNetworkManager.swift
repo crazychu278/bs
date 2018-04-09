@@ -18,7 +18,23 @@ enum WYHTTPMethod {
 
 class WYNetworkManager: AFHTTPSessionManager {
     
-    static let shared = WYNetworkManager()
+    static let shared : WYNetworkManager = {
+        
+        let instance = WYNetworkManager()
+        
+        instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        
+        return instance
+    }()
+    
+    
+    
+    lazy var userAccount = WYUserAccount()
+    
+    var userLogon: Bool{
+        return userAccount.uid != nil
+    }
+    
     
 //    var accessToken: String? = "2.00BvvVDGNmwfQC8977bd9962SAfhKD"
 //

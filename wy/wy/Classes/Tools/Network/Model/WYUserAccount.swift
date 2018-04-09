@@ -8,6 +8,8 @@
 
 import Foundation
 import YYModel
+
+private let accountFile: NSString = "useraccount.json"
 class WYUserAccount: NSObject {
     
     @objc var uid: String?
@@ -34,19 +36,33 @@ class WYUserAccount: NSObject {
     
     
     func saveAccount(){
-        let dict = self.yy_modelToJSONObject() as? [String:String]
         
+        let dict = (self.yy_modelToJSONObject() as? [String:String]) ?? [:]
+        print(dict)
         guard let data = try? JSONSerialization.data(withJSONObject: dict, options: []),
-            let filePath = ("useraccount.json" as NSString).cz_appendTempDir() else{
+            let filePath = accountFile.cz_appendDocumentDir() else{
                 return
         }
         
         (data as NSData).write(toFile: filePath, atomically: true)
         
-        print("保存成功")
+        print("保存成功\(filePath)")
+
+    }
+    
+    override init() {
+        super.init()
         
+        //加载保存文件
+        guard let path = accountFile.cz_appendDocumentDir(),
+              let data = NSData(contentsOfFile: path),
+              let dict = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [String:AnyObject] else{
+                return
+        }
         
+        yy_modelSet(with: dict ?? [:])
         
+        print("沙盒")
         
     }
     

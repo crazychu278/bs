@@ -32,7 +32,6 @@ class WYMapViewController: WYBaseViewController {
     }
     
     @objc private func loginSuccessMap(){
-        isUserLogin = true
         viewDidLoad()
         NotificationCenter.default.removeObserver(self)
     }

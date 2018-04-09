@@ -11,7 +11,7 @@ import UIKit
 class WYBaseViewController: UIViewController {
     
     //是否登陆
-    var isUserLogin = false
+    //var isUserLogin = false
     
     static let shared = WYBaseViewController()
     
@@ -80,7 +80,7 @@ class WYBaseViewController: UIViewController {
     
         setupNavigationBar()
         
-        isUserLogin ? setupTableView() : setupVisitorView()
+        WYNetworkManager.shared.userLogon ? setupTableView() : setupVisitorView()
     }
     
     private func setupNavigationBar(){

@@ -49,15 +49,14 @@ extension WYNetworkManager{
         }
     }
     
-//    func getUserData(URLString: String,completion: @escaping ([[String: AnyObject]]?,Bool)->()){
-//        
-//        request(URLString: URLString, parameters: nil){ (json, isSuccess) in
-//            let result = json as? [[String: AnyObject]]
-//            print(json!["error"])
-//
-//            completion(result,isSuccess)
-//        }
-//    }
+    func setUserAccount(URLString: String,completion: @escaping ([String: AnyObject]?,Bool)->()){
+        request(URLString: URLString, parameters: nil){ (json, isSuccess) in
+            let result = json as? [String: AnyObject]
+            self.userAccount.yy_modelSet(with: (json as? [String: AnyObject]) ?? [:])
+            self.userAccount.saveAccount()
+            completion(result,isSuccess)
+        }
+    }
     
     
     
