@@ -13,6 +13,8 @@ class WYBaseViewController: UIViewController {
     //是否登陆
     var isUserLogin = false
     
+    static let shared = WYBaseViewController()
+    
     //访客视图信息字典
     var visitorInfoDic:[String: String]?
     
@@ -36,14 +38,26 @@ class WYBaseViewController: UIViewController {
         loadData()
         
         
-        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(rawValue: "Name"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(rawValue: "base"), object: nil)
         // Do any additional setup after loading the view.
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    
+    
     @objc func loginSuccess(){
-        isUserLogin = true
+        //isUserLogin = true
         print("aaaa")
-        view = nil
+        
+        navItem.leftBarButtonItem = nil
+        navItem.rightBarButtonItem = nil
+        
+        
+        //view = nil
+        setupUI()
         
         NotificationCenter.default.removeObserver(self)
     }
@@ -53,10 +67,6 @@ class WYBaseViewController: UIViewController {
         }
     }
     
-    
-    func reload(){
-        view = nil
-    }
     
     
     @objc func loadData() {
@@ -101,6 +111,9 @@ class WYBaseViewController: UIViewController {
         //设置内容缩进
         tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height, left: 0, bottom: tabBarController?.tabBar.bounds.height ?? 49, right: 0)
         
+        tableView?.scrollIndicatorInsets = tableView!.contentInset
+        
+        
         //添加刷新控件
         //刷新控件
         //实例化
@@ -138,9 +151,10 @@ class WYBaseViewController: UIViewController {
 extension WYBaseViewController{
     
     @objc private func login(){
-        let nav = UINavigationController(rootViewController: WYLoginViewController())
-        //界面跳转
-        self.present(nav, animated:true, completion:nil)
+//        let nav = UINavigationController(rootViewController: WYLoginViewController())
+//        //界面跳转
+//        self.present(nav, animated:true, completion:nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: WYUserShouldLoginNotification), object: nil)
         
     }
     @objc private func register(){

@@ -29,9 +29,11 @@ class WYHomeViewController: WYBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        // Do any additional setup after loading the view.
+       
     }
+    
+
+    
     
     @objc private func showfrends(){
         let vc = WYDemoViewController()

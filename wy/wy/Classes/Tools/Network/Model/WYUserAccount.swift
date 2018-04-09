@@ -7,14 +7,15 @@
 //
 
 import Foundation
-
+import YYModel
 class WYUserAccount: NSObject {
     
     @objc var uid: String?
     
-    
-    
     @objc var name: String?
+    
+    @objc var loginpw: String?
+    
     @objc var avatar: String?
     
     @objc var gender: String?
@@ -22,13 +23,11 @@ class WYUserAccount: NSObject {
     @objc var mobile: String?
 
     @objc var college: String?
+    
     @objc var major: String?
     
     @objc var level: String?
-    
-    @objc var balance: String?
-    
-    
+
     override var description: String{
         return yy_modelDescription()
     }

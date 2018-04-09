@@ -27,32 +27,39 @@ class WYMapViewController: WYBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccessMap), name: NSNotification.Name(rawValue: "map"), object: nil)
         // Do any additional setup after loading the view.
     }
     
+    @objc private func loginSuccessMap(){
+        isUserLogin = true
+        viewDidLoad()
+        NotificationCenter.default.removeObserver(self)
+    }
+
     override func setupTableView() {
-        
-        
+
+
         let mapView = MAMapView(frame: CGRect(x: 0, y: 64, width: self.view.bounds.width,height: self.view.bounds.height-49-64))
-        
+
         //let mapView = MAMapView(frame: self.view.bounds)
         AMapServices.shared().apiKey = "8c30a0a7546e8d8b252c735da0a9199e"
-        
+
         AMapServices.shared().enableHTTPS = true
-        
+
 //        let pointAnnotation = MAPointAnnotation()
 //        pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: 39.979590, longitude: 116.352792)
 //        pointAnnotation.title = "方恒国际"
 //        pointAnnotation.subtitle = "阜通东大街6号"
 //        mapView.addAnnotation(pointAnnotation)
-        
-        
+
+
         mapView.delegate = self as? MAMapViewDelegate
         mapView.isShowsUserLocation = true
         mapView.userTrackingMode = .follow
         view.insertSubview(mapView, belowSubview: navigationBar)
-        
-        
+
+
         for item in place{
             let pointAnnotation = MAPointAnnotation()
             pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: item["longitude"] as! CLLocationDegrees, longitude: item["latitude"] as! CLLocationDegrees)
@@ -60,31 +67,31 @@ class WYMapViewController: WYBaseViewController {
             //pointAnnotation.subtitle = "阜通东大街6号"
             mapView.addAnnotation(pointAnnotation)
         }
-        
-        
-        
-        
+
+
+
+
     }
-    
-    
-    
+
+
+
     func mapView(_ mapView: MAMapView!, viewFor annotation: MAAnnotation!) -> MAAnnotationView! {
-        
+
         if annotation.isKind(of: MAPointAnnotation.self) {
             let pointReuseIndetifier = "pointReuseIndetifier"
             var annotationView: MAAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: pointReuseIndetifier)
-            
+
             if annotationView == nil {
                 annotationView = MAAnnotationView(annotation: annotation, reuseIdentifier: pointReuseIndetifier)
             }
-            
+
             annotationView!.image = UIImage(named: "restaurant")
             //设置中心点偏移，使得标注底部中间点成为经纬度对应点
             //annotationView!.centerOffset = CGPoint(0, -18);
-            
+
             return annotationView!
         }
-        
+
         return nil
     }
 }

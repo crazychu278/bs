@@ -19,15 +19,10 @@ class WYLoginViewController: UIViewController {
     @IBOutlet weak var passwordText: UITextField!
     
     @IBAction func login(_ sender: Any) {
+        usenameText.text = "chengyong"
+        passwordText.text = "abc123"
         if (usenameText.text! != "" && passwordText.text! != "") {
             checkIn()
-            
-            
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-                self.dismiss(animated: true, completion: nil)
-            }
-            
-            
         }else{
             let alertController = UIAlertController(title: "输入不能为空",
                                                     message: nil, preferredStyle: .alert)
@@ -49,7 +44,7 @@ class WYLoginViewController: UIViewController {
     @objc private func checkIn(){
         let URLString = "http://www.yunprint.com/api/cse49910p/login/uid/" + usenameText.text!+"/pwd/" + passwordText.text!
         WYNetworkManager.shared.request(URLString: URLString, parameters: nil){ (json, isSuccess) in
-            if (json!["error"] as! Bool) == false{
+            if (json!["error"] as?  Bool) == false{
                 self.userAccount = json!["user"] as! [String : AnyObject]
                 print(self.userAccount)
                 let alertController = UIAlertController(title: "登录成功",
@@ -61,8 +56,17 @@ class WYLoginViewController: UIViewController {
                     self.presentedViewController?.dismiss(animated: false, completion: nil)
                 }
                 
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Name"), object: true)
+                WYBaseViewController.shared.isUserLogin = true
                 
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "base"), object: nil)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "map"), object: nil)
+                
+                
+                
+                
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+                    self.dismiss(animated: true, completion: nil)
+                }
                 
             }else{
                 let alertController = UIAlertController(title: "密码错误",

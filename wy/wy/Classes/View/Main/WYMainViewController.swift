@@ -32,7 +32,7 @@ class WYMainViewController: UITabBarController {
         let nav = UINavigationController(rootViewController: WYLoginViewController())
         
         
-        self.present(nav,animated: true,completion: nil)
+        present(nav,animated: true,completion: nil)
         
         
     }
