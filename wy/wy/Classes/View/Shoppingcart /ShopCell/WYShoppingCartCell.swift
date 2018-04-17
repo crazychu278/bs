@@ -13,13 +13,13 @@ class WYShoppingCartCell: UITableViewCell {
     
     @IBOutlet weak var name: UILabel!
     
+    @IBOutlet weak var shopName: UILabel!
+    
     @IBOutlet weak var itemImage: UIImageView!
     
     @IBOutlet weak var numbers: UILabel!
     
-    @IBOutlet weak var tyoes: UILabel!
-    
-    @IBOutlet weak var payMoney: UILabel!
+    @IBOutlet weak var blindprice: UILabel!
     
     
     @IBOutlet weak var pay: UIButton!

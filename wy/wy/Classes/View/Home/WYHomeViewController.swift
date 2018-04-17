@@ -72,8 +72,10 @@ extension WYHomeViewController{
         //取cell
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! WYStatusCell
         
-        cell.shopname.text = listViewModel.statusList[indexPath.row].name
-
+        cell.shopname.text = listViewModel.statusList[indexPath.row].shopname
+        cell.desprip.text = listViewModel.statusList[indexPath.row].descrip
+        cell.blindprice.text = listViewModel.statusList[indexPath.row].blindprice
+        cell.name.text = listViewModel.statusList[indexPath.row].name
         return cell
     }
 }

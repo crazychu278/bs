@@ -9,13 +9,17 @@
 import UIKit
 import YYModel
 
-class WYStatus: NSObject {
+class WYShoppingCartStatus: NSObject {
 
-    @objc var sid: String?
+    @objc var shopname: String?
     
     @objc var name: String?
     
-    var user: WYShop?
+    @objc var blindprice: String?
+    
+    @objc var number: String?
+    
+    @objc var face: String?
 
     override var description: String{
         return yy_modelDescription()

@@ -10,11 +10,12 @@ import Foundation
 import YYModel
 
 class WYShop: NSObject {
-
-    @objc var face: String?
+    
+    @objc var shopname: String?
     @objc var descrip: String?
     @objc var blindprice: String?
     @objc var name: String?
+    @objc var face: String?
     
     override var description: String{
         return yy_modelDescription()
