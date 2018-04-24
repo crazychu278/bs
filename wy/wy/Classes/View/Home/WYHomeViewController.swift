@@ -76,6 +76,8 @@ extension WYHomeViewController{
         cell.desprip.text = listViewModel.statusList[indexPath.row].descrip
         cell.blindprice.text = listViewModel.statusList[indexPath.row].blindprice
         cell.name.text = listViewModel.statusList[indexPath.row].name
+        cell.face.image = UIImage(named: listViewModel.statusList[indexPath.row].face!)
+        
         return cell
     }
 }

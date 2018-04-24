@@ -18,14 +18,14 @@ class WYStatusListViewModel {
     lazy var statusList = [WYShop]()
     lazy var shopStatusList = [WYShoppingCartStatus]()
     lazy var OrderStateList = [WYOrderState]()
+    lazy var orderDetail = [WYOrderDetail]()
     private var printerSid = 0
     
     
-    
     var shoppingCartList =
-        [["shopname": "文印服务部", "name": "服务彩色黑白文本画册资料打印复印书本装订数码快印彩印", "blindprice": "0.1", "number": "3", "face":"20180319/5aafb43a82c1a.jpg"],
-        ["shopname": "科技楼东复印店", "name":"服务彩色黑白文本画册资料打印复印书本装订数码快印彩印","blindprice": "0.1","number": "3", "image":"20180319/5aaf76a948658.jpg"],
-        ["shopname": "新光数码快印", "name": "优质高速黑白彩色打印网上提交随时自提 ", "blindprice": "0.1", "number": "3", "face": "20180319/5aafae98e7a69.jpg"]]
+        [["shopname": "文印服务部", "name": "服务彩色黑白文本画册资料打印复印书本装订数码快印彩印", "blindprice": "0.1", "number": "3", "face":"huacaidisplay.jpg"],
+        ["shopname": "科技楼东复印店", "name":"服务彩色黑白文本画册资料打印复印书本装订数码快印彩印","blindprice": "0.1","number": "3", "face":"xinguangdisplay.jpg"],
+        ["shopname": "新光数码快印", "name": "优质高速黑白彩色打印网上提交随时自提 ", "blindprice": "0.1", "number": "3", "face": "wenyindisplay.jpg"]]
     
     var orderList =
         [
@@ -89,6 +89,7 @@ class WYStatusListViewModel {
         
     }
     
+
     
     func loadOrderStatus(pullup: Bool, completion:@escaping (Bool,Bool)->())  {
         
@@ -108,12 +109,27 @@ class WYStatusListViewModel {
         
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
+    func loadOrderDetail(completion:@escaping (Bool)->()){
+        let singleton = Singleton.sharedInstance()
+        print(singleton.text)
+        let urlstring = "http://www.yunprint.com/api/cse49910p/myorders/uid/chengyong"
+        WYNetworkManager.shared.orderDetailList(URLString: urlstring) { (list,isSuccess) in
+            var detailList = [[String:AnyObject]]()
+            for item in list!{
+                if item["state"] as? String == singleton.text{
+                    detailList.append(item)
+                }
+            }
+            
+            guard let array = NSArray.yy_modelArray(with: WYOrderDetail.self,  json: detailList) as? [WYOrderDetail] else{
+                return
+            }
+            
+            self.orderDetail = array
+            completion(isSuccess)
+        }
+    }
 }
+
+
+

@@ -64,7 +64,7 @@ extension WYShoppingcartController{
         cell.shopName.text = listViewModel.shopStatusList[indexPath.row].shopname
         cell.blindprice.text = listViewModel.shopStatusList[indexPath.row].blindprice
         cell.numbers.text = listViewModel.shopStatusList[indexPath.row].number
-
+        cell.itemImage.image = UIImage(named: listViewModel.shopStatusList[indexPath.row].face!)
         return cell
     }
 }

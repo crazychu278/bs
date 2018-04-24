@@ -124,8 +124,7 @@ class WYBaseViewController: UIViewController {
         
         //添加监听方法
         refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
-        
-        
+
     }
     
     

@@ -33,6 +33,11 @@
 		B24413DA2085EE0700A773BA /* WYOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24413D82085EE0700A773BA /* WYOrderCell.swift */; };
 		B24413DB2085EE0700A773BA /* WYOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24413D92085EE0700A773BA /* WYOrderCell.xib */; };
 		B24413DF2085F12C00A773BA /* WYOrderState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24413DE2085F12C00A773BA /* WYOrderState.swift */; };
+		B24413E8208867FC00A773BA /* WYOrderDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24413E7208867FC00A773BA /* WYOrderDetail.swift */; };
+		B24413F9208A455E00A773BA /* WYDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24413F7208A455E00A773BA /* WYDetailController.swift */; };
+		B24413FD208A4B0800A773BA /* WYOrderDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24413FB208A4B0800A773BA /* WYOrderDetailCell.swift */; };
+		B24413FE208A4B0800A773BA /* WYOrderDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24413FC208A4B0800A773BA /* WYOrderDetailCell.xib */; };
+		B2441400208ADD6A00A773BA /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24413FF208ADD6A00A773BA /* Singleton.swift */; };
 		B2482B9E20736BA40008E677 /* WYCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2482B9D20736BA40008E677 /* WYCommon.swift */; };
 		B2482BA4207376430008E677 /* WYUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2482BA3207376430008E677 /* WYUserAccount.swift */; };
 		B2482BE320745ED40008E677 /* WYStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2482BE220745ED40008E677 /* WYStatusCell.swift */; };
@@ -54,6 +59,8 @@
 		B2D08531202B0E5E0008BE84 /* WYMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D08530202B0E5E0008BE84 /* WYMapViewController.swift */; };
 		B2D08534202B27B10008BE84 /* WYDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D08533202B27B10008BE84 /* WYDemoViewController.swift */; };
 		B2D08536202B30790008BE84 /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D08535202B30790008BE84 /* UIBarButtonItem+Extensions.swift */; };
+		B2E637D7208DC3970068761C /* WYEditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E637D5208DC3970068761C /* WYEditProfileController.swift */; };
+		B2E637D8208DC3970068761C /* WYEditProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2E637D6208DC3970068761C /* WYEditProfileController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +108,11 @@
 		B24413D82085EE0700A773BA /* WYOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYOrderCell.swift; sourceTree = "<group>"; };
 		B24413D92085EE0700A773BA /* WYOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WYOrderCell.xib; sourceTree = "<group>"; };
 		B24413DE2085F12C00A773BA /* WYOrderState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYOrderState.swift; sourceTree = "<group>"; };
+		B24413E7208867FC00A773BA /* WYOrderDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYOrderDetail.swift; sourceTree = "<group>"; };
+		B24413F7208A455E00A773BA /* WYDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYDetailController.swift; sourceTree = "<group>"; };
+		B24413FB208A4B0800A773BA /* WYOrderDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYOrderDetailCell.swift; sourceTree = "<group>"; };
+		B24413FC208A4B0800A773BA /* WYOrderDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WYOrderDetailCell.xib; sourceTree = "<group>"; };
+		B24413FF208ADD6A00A773BA /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		B2482B9D20736BA40008E677 /* WYCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYCommon.swift; sourceTree = "<group>"; };
 		B2482BA3207376430008E677 /* WYUserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYUserAccount.swift; sourceTree = "<group>"; };
 		B2482BE220745ED40008E677 /* WYStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYStatusCell.swift; sourceTree = "<group>"; };
@@ -122,6 +134,8 @@
 		B2D08530202B0E5E0008BE84 /* WYMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYMapViewController.swift; sourceTree = "<group>"; };
 		B2D08533202B27B10008BE84 /* WYDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYDemoViewController.swift; sourceTree = "<group>"; };
 		B2D08535202B30790008BE84 /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
+		B2E637D5208DC3970068761C /* WYEditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYEditProfileController.swift; sourceTree = "<group>"; };
+		B2E637D6208DC3970068761C /* WYEditProfileController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WYEditProfileController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +249,16 @@
 			path = OrderCell;
 			sourceTree = "<group>";
 		};
+		B24413E020874D1B00A773BA /* WYDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B24413F7208A455E00A773BA /* WYDetailController.swift */,
+				B24413FB208A4B0800A773BA /* WYOrderDetailCell.swift */,
+				B24413FC208A4B0800A773BA /* WYOrderDetailCell.xib */,
+			);
+			path = WYDetail;
+			sourceTree = "<group>";
+		};
 		B2482B9F207370290008E677 /* auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +273,9 @@
 		B2482BA2207375FF0008E677 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B273CECF203E75E400E57333 /* WYNetworkManager.swift */,
+				B2482BA3207376430008E677 /* WYUserAccount.swift */,
+				B218D750204FED43004C8E24 /* WYNetworkManager+Extension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -266,9 +293,6 @@
 			isa = PBXGroup;
 			children = (
 				B2482BA2207375FF0008E677 /* Model */,
-				B273CECF203E75E400E57333 /* WYNetworkManager.swift */,
-				B2482BA3207376430008E677 /* WYUserAccount.swift */,
-				B218D750204FED43004C8E24 /* WYNetworkManager+Extension.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -312,8 +336,11 @@
 		B29E99082027476E004C7568 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				B2E637D9208DC39F0068761C /* EditProfile */,
+				B24413E020874D1B00A773BA /* WYDetail */,
 				B24413DC2085EE1600A773BA /* OrderCell */,
 				B29E991620274934004C7568 /* WYProfileViewController.swift */,
+				B24413FF208ADD6A00A773BA /* Singleton.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -351,6 +378,7 @@
 				B22DE48F2058290F00FD568A /* WYShoppingCartStatus.swift */,
 				B2482BE620746ABE0008E677 /* WYShop.swift */,
 				B24413DE2085F12C00A773BA /* WYOrderState.swift */,
+				B24413E7208867FC00A773BA /* WYOrderDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -398,6 +426,15 @@
 				B2D08533202B27B10008BE84 /* WYDemoViewController.swift */,
 			);
 			path = demo;
+			sourceTree = "<group>";
+		};
+		B2E637D9208DC39F0068761C /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				B2E637D5208DC3970068761C /* WYEditProfileController.swift */,
+				B2E637D6208DC3970068761C /* WYEditProfileController.xib */,
+			);
+			path = EditProfile;
 			sourceTree = "<group>";
 		};
 		BF0694CE454C65C85A442E7D /* Frameworks */ = {
@@ -475,10 +512,12 @@
 				B29E36C02079F81E00D8179F /* WYSignupViewController.xib in Resources */,
 				B2482BE520745EFD0008E677 /* WYstatusNormalCell.xib in Resources */,
 				B20C58D9203050EE00706B8B /* interface.json in Resources */,
+				B2E637D8208DC3970068761C /* WYEditProfileController.xib in Resources */,
 				B25106F5207925C100E30B53 /* WYLoginViewController.xib in Resources */,
 				B24413DB2085EE0700A773BA /* WYOrderCell.xib in Resources */,
 				B21CC3F02027135000ABC0A4 /* LaunchScreen.storyboard in Resources */,
 				B21F53AB2077BF880059B390 /* WYShoppingCartNormalCell.xib in Resources */,
+				B24413FE208A4B0800A773BA /* WYOrderDetailCell.xib in Resources */,
 				B21CC3ED2027135000ABC0A4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,16 +597,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				B24413DF2085F12C00A773BA /* WYOrderState.swift in Sources */,
+				B2441400208ADD6A00A773BA /* Singleton.swift in Sources */,
 				B22DE4922058B93000FD568A /* WYStatusListViewModel.swift in Sources */,
 				B20C58C8202C16FE00706B8B /* UIColor+CZAddition.m in Sources */,
 				B273CED0203E75E400E57333 /* WYNetworkManager.swift in Sources */,
 				B20C58D2202C16FE00706B8B /* NSString+CZPath.m in Sources */,
+				B24413E8208867FC00A773BA /* WYOrderDetail.swift in Sources */,
 				B25106F4207925C100E30B53 /* WYLoginViewController.swift in Sources */,
 				B20C58C7202C16FE00706B8B /* UIViewController+CZAddition.m in Sources */,
 				B20C58CE202C16FE00706B8B /* UIButton+CZAddition.m in Sources */,
 				B20C58CF202C16FE00706B8B /* UILabel+CZAddition.m in Sources */,
 				B2D08536202B30790008BE84 /* UIBarButtonItem+Extensions.swift in Sources */,
 				B20C58CA202C16FE00706B8B /* NSString+CZBase64.m in Sources */,
+				B24413FD208A4B0800A773BA /* WYOrderDetailCell.swift in Sources */,
 				B20C58D1202C16FE00706B8B /* NSArray+Log.m in Sources */,
 				B2482BA4207376430008E677 /* WYUserAccount.swift in Sources */,
 				B2482BE720746ABE0008E677 /* WYShop.swift in Sources */,
@@ -576,12 +618,14 @@
 				B20C58CD202C16FE00706B8B /* NSAttributedString+CZAdditon.m in Sources */,
 				B29E36BF2079F81E00D8179F /* WYSignupViewController.swift in Sources */,
 				B2D0852E202B0DF10008BE84 /* WYShoppingcartController.swift in Sources */,
+				B2E637D7208DC3970068761C /* WYEditProfileController.swift in Sources */,
 				B20C58CC202C16FE00706B8B /* NSObject+CZRuntime.m in Sources */,
 				B29E9911202748C0004C7568 /* WYNavigationController.swift in Sources */,
 				B21CC3E62027135000ABC0A4 /* AppDelegate.swift in Sources */,
 				B24413DA2085EE0700A773BA /* WYOrderCell.swift in Sources */,
 				B29E991720274934004C7568 /* WYProfileViewController.swift in Sources */,
 				B218D751204FED43004C8E24 /* WYNetworkManager+Extension.swift in Sources */,
+				B24413F9208A455E00A773BA /* WYDetailController.swift in Sources */,
 				B20C58CB202C16FE00706B8B /* UIScreen+CZAddition.m in Sources */,
 				B29E991920274945004C7568 /* WYMessageViewController.swift in Sources */,
 				B20C58D6202E935D00706B8B /* WYVistorView.swift in Sources */,

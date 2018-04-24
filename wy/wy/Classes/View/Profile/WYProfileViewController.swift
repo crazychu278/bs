@@ -14,22 +14,17 @@ class WYProfileViewController: WYBaseViewController {
     
     private let cellId = "cellId"
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //NotificationCenter.default.addObserver(self, selector: #selector(getDetail), name: NSNotification.Name(rawValue: "getOrderDetail"), object: nil)
     }
 
-    @objc private func getDetail(){
-        print("获得通知")
-        
-        
-        
-    }
+    
     
     @objc private func setInformation(){
-//        let vc = WYDemoViewController()
-//        vc.hidesBottomBarWhenPushed = true
-//        navigationController?.pushViewController(vc, animated: true)
+        let nav = UINavigationController(rootViewController: WYEditProfileController())
+        present(nav,animated: true,completion: nil)
     }
     
     override func loadData() {
@@ -46,15 +41,13 @@ class WYProfileViewController: WYBaseViewController {
     
     override func setupTableView() {
         super.setupTableView()
-        //navigationItem.leftBarButtonItem = UIBarButtonItem(title: "11", style: UIBarButtonItemStyle.plain, target: self, action: #selector(showfrends))
+
         navItem.rightBarButtonItem = UIBarButtonItem(title: "修改个人信息", fontSize: 16, target: self, action: #selector(setInformation))
         
-        //tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         tableView?.register(UINib(nibName: "WYOrderCell", bundle: nil), forCellReuseIdentifier: cellId)
         
-        //行高
-        
         tableView?.rowHeight = UITableViewAutomaticDimension
+        
         tableView?.estimatedRowHeight = 50
         
         //取消分割线
@@ -66,8 +59,25 @@ class WYProfileViewController: WYBaseViewController {
     }
     
     //getOrderDetail
+    ///////
+    //////
+    /////
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.item)
+        
+        //listViewModel.setStatus(sta: String(indexPath.item+1))
+        
+        let singleton = Singleton.sharedInstance()
+        
+        singleton.text = (String(indexPath.item+1))
+        
+        
+        let nav = UINavigationController(rootViewController: WYDetailController())
+        
+        //界面跳转
+        self.present(nav, animated:true, completion:nil)
+        
+        
     }
 
 }
@@ -85,4 +95,8 @@ extension WYProfileViewController{
         return cell
     }
     
+    
+}
+protocol loadingDeleagte {
+    func didLoading(text: String)
 }

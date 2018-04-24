@@ -61,10 +61,7 @@ extension WYNetworkManager{
                     guard let descrip = dic["descrip"] as? String else {
                         continue
                     }
-                    guard let face = dic["face"] as? String else {
-                        continue
-                    }
-                    self.temp["face"] = face
+                    self.temp["face"] = item["sid"]!+".jpg"
                     self.temp["shopname"] = item["name"]
                     self.temp["descrip"] = descrip
                     self.temp["name"] = name
@@ -83,5 +80,17 @@ extension WYNetworkManager{
             completion(result,isSuccess)
         }
     }
+    
+    
+    //OrderDetail
+     func orderDetailList(URLString: String,completion: @escaping ([[String: AnyObject]]?,Bool)->()){
+        request(URLString: URLString, parameters: nil){ (json ,isSuccess) in
+            let result = json as? [[String: AnyObject]]
+            completion(result,isSuccess)
+        }
+    }
+    
+    
+    
 
 }
